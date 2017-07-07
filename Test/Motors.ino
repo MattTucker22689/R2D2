@@ -1,8 +1,10 @@
 /*
  Author: Matt Tucker
 
- Description: As I plan on recycling this code as I continue building/upgrading my R2D2 I added extra code, variations of the "forward()" 
+ Description: This code tests the motors and the motor shield. As I plan on recycling this code as I continue building/upgrading my R2D2 I added extra code, variations of the "forward()" 
  method, that can be implemented at a later date.
+ 
+ Note: This was originally written for an Uno, and may need some revision to work for the Mega 2560
  
  Date: 19Dec16
 */
