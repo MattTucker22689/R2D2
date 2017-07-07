@@ -1,3 +1,10 @@
+/*
+ Author: Matt Tucker
+ Description: Test the ultrasonic sensor. This code will be used again later
+ 
+ Date: 19Dec16
+*/
+
 const int pingPin=7;//defines pin number of sensor's output. let it be noted that const means constant
  
 void setup()
