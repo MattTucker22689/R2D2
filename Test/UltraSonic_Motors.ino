@@ -1,14 +1,10 @@
 /*
   Author:
-
   Matt Tucker
-
   Description:
-
   This is a test of the motors and ultrasonic sensor. It will return the distance between the sensor
   and an object in serial, as well as control the motors. The bot will now respond at a basic level to
   its enviroment.
-
 */
 
 //***UltraSonic***//
@@ -16,7 +12,7 @@ const int pingPin = A4;
 //********END*****//
 
 //***Motors***//
-#include
+#include <AFMotor.h>
 AF_DCMotor motor1(2);
 AF_DCMotor motor2(3);
 //********END*****//
