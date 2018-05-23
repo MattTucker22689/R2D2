@@ -16,8 +16,7 @@
           This is so code can be easily traced back to their earlier test sketches. For example,
           a block that's titled "MOTOR" should be similar to that in the Motor.ino test sketch. I do
           this to limit the amount of comments needed to explain larger sketches made via compiling
-          several tests sketches.
-          
+          several tests sketches.        
 */
 
 //***Speaker_&_SD***
