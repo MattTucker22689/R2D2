@@ -5,7 +5,7 @@ Everything in the "Test" branch, is that which can be used to test
 different components of the bot and how well they do or do not work 
 together.
 
-Everything in the, "Bot" branch, is the final code. The html files 
+Everything in the, "Bot" branch, is the final code. The index.html 
 and template folder need to be placed in the /var/www/html/ folder 
 on your Raspberry Pi.
 
