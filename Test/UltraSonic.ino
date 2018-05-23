@@ -1,10 +1,9 @@
 /*
   Author:
-    Matt Tucker
-
+          Matt Tucker
   Description:
-    This is a test of the ultrasonic sensor. It will return the distance between the sensor
-    and an object in serial.
+          This is a test of the ultrasonic sensor. It will return the distance between the sensor
+          and an object in serial.
 */
 
 //***UltraSonic***//
@@ -35,7 +34,6 @@ long Sensor_loop()
   //You may find this value to be inaccurate. If it is, you can use a ruler and
   //a book to find out what the value is off by inoder to calculate what you need.
   // k_new=k_old*(d_actual/d_sensor)
-
   inches = long(microseconds / 148);
 
   //Print distance values
