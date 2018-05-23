@@ -1,18 +1,13 @@
 /*
   Author:
-
-  Matt Tucker
-
+        Matt Tucker
   Description:
-
-  Motor test code- Here we want to predict and write AS MUCH, of the code that will
-  be directly responsible for controlling the motors, as possible. That way, when it comes
-  time to puting the cde all together, there won't be AS MUCH to do.
-
+        Motor test code- Here we want to predict and write AS MUCH, of the code that will
+        be directly responsible for controlling the motors, as possible. That way, when it comes
+        time to puting the cde all together, there won't be AS MUCH to do.
   Note:
-
-  If your motors aren't moving in the correct directions you can always flip the wires or
-  change the code to reflect this.
+        If your motors aren't moving in the correct directions you can always flip the wires or
+        change the code to reflect this.
 
 */
 //***Motors***
@@ -23,7 +18,6 @@ AF_DCMotor motor2(3);
 
 void setup()
 {
-
   Serial.begin(9600);
   //***Motors***
   motor1.setSpeed(255);
@@ -31,8 +25,8 @@ void setup()
   motor1.run(RELEASE);
   motor2.run(RELEASE);
   //********END*****//
-
 }
+
 //***Motors***
 void Forward()
 {
