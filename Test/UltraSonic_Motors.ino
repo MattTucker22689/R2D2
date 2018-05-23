@@ -1,10 +1,10 @@
 /*
   Author:
-  Matt Tucker
+          Matt Tucker
   Description:
-  This is a test of the motors and ultrasonic sensor. It will return the distance between the sensor
-  and an object in serial, as well as control the motors. The bot will now respond at a basic level to
-  its enviroment.
+          This is a test of the motors and ultrasonic sensor. It will return the distance between the sensor
+          and an object in serial, as well as control the motors. The bot will now respond at a basic level to
+          its enviroment.
 */
 
 //***UltraSonic***//
