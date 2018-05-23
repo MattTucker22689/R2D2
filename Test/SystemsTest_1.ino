@@ -5,12 +5,19 @@
           27APR2018
    Description:
           The combination of several individual test projects. The following code will test:
-            4 LEDs, 2 motors, 1 servo, and 1 speaker
+          4 LEDs, 2 motors, 1 servo, and 1 speaker
           The code is to be executed on a Mega 2560 with a motor shield and sensor shield.
    Notes:
           Future iterations will include a Raspberry Pi running a Python script that communicates
           with the Mega 2560. The Python script will use OpenCV to evaluate images from a live
           video for faces, dogs, ect and then send commands to the Mega 2560 accordingly.
+          
+          You may notice blocks of code written between "//***Title***" <CODE> "//********END*****//"
+/*        This is so code can be easily traced back to their earlier test sketches. For example,
+          a block that's titled "MOTOR" should be similar to that in the Motor.ino test sketch. I do
+          this to limit the amount of comments needed to explain larger sketches made via compiling
+          several tests sketches.
+          
 */
 
 //***Speaker_&_SD***
