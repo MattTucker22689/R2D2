@@ -13,7 +13,7 @@
           video for faces, dogs, ect and then send commands to the Mega 2560 accordingly.
           
           You may notice blocks of code written between "//***Title***" <CODE> "//********END*****//"
-/*        This is so code can be easily traced back to their earlier test sketches. For example,
+          This is so code can be easily traced back to their earlier test sketches. For example,
           a block that's titled "MOTOR" should be similar to that in the Motor.ino test sketch. I do
           this to limit the amount of comments needed to explain larger sketches made via compiling
           several tests sketches.
