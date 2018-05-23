@@ -135,12 +135,14 @@ long Sensor_loop()
 void loop()
 {
   long inches = Sensor_loop();
+  //If the bot "senses" it has come within 6in of an object, it: STOP-BACKWARD-TURNLEFT
   if (inches < 6)
   {
     Stop();
     Backward();
     TurnLeft();
   }
+  //Otherwise, it: FORWARD
   else
   {
     Forward();
