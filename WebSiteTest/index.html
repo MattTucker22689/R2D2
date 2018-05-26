@@ -1,1 +1,96 @@
-<!-- This is only the test code. Notice the lack of code for the camera? That's because here we're just trying to control the bot.-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="icon" href="favicon2.ico" type="image/x-icon">
+		<title>R2D2</title>
+		<meta name="decription" content="Control interface for R2D2">
+		<meta name="author" content="Matt Tucker"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script>	
+			function ctrlMethod() {
+    			if (document.getElementById("ctrlButton").innerText == 'Press for Automatic Control'){
+    				document.getElementById("ctrlChoice").innerText = 'R2 is currently running via Automatic Control';
+    				document.getElementById("ctrlButton").innerText = 'Press for Manual Control';
+    			}
+    			else{
+    				document.getElementById("ctrlChoice").innerText = 'R2 is currently running via Manual Control';
+    				document.getElementById("ctrlButton").innerText= 'Press for Automatic Control';
+    			}
+			}
+		</script>
+		<style>
+		div.container{
+			width: 100%;
+			border: 1px solid orange;
+		}
+		body{
+			background-image: url("img2.jpg");
+   			background-color: #cccccc;
+   		}
+		header, footer, iframe{
+    			padding: 1em;
+    			color: white;
+    			background-color: rgba(0, 0, 0, 0.75);
+    			clear: left;
+    			text-align: left
+		}
+		nav{
+    			float: left;
+    			max-width: 160px;
+    			margin: 0;
+    			padding: 1em;
+    			background-color: rgba(0, 0, 0, 0.75);
+    			color: white;
+		}
+		article{
+			height:600px; 
+			max-width:1050;
+   			margin-left: 170px;
+    			border-left: 1px solid orange;
+    			padding: 1em;
+    			overflow: hidden;
+		}
+		</style>
+	</head>
+
+	<body>
+		
+		<div class="container">
+			<header>
+				<h1 style="text-align: center">R2D2's Control Center</h1>
+				<h3 style="text-align: center">Serial Connection Status:<span style="color:red; font-size:500%;"> <b>&#x25C9;</b></span></h3>
+					<p style="font-size:60%;">A <span style="color:red;"> <b>RED</b> </span> light indicates that the Pi is waiting for a connection confirmation from the Arduino.</p>
+					<p style="font-size:60%;">A <span style="color:green;"> <b>GREEN</b> </span> light indicates that the connection has been confirmed.</p>
+			</header>
+			
+			<nav>
+				<h1>Controls and Live Video Feed</h1>
+					<p>To change between manual or automatic control, press the button:</p>
+					<button id="ctrlButton" type="button" onclick="ctrlMethod()">Press for Automatic Control</button>
+					<p id="ctrlChoice">R2 is currently running via Manual Control</p>
+			</nav>
+			<article style="border-top: 1px solid orange;">
+				<div style="float:left">
+				<center><h2 style="color:chartreuse;text-shadow:1px 2px black;">Live Feed</h2>
+				<img src="http://192.168.254.13:8081" style="height:400px; width:600px"></center>
+				</div>
+				
+				<div style="height:400px; width:275px; float:right;">
+				<center>
+					<h2 style="font-weight:900; color:chartreuse;text-shadow:1px 2px black;"><b>R2's Controls<b></h2><br>
+						<a href="#" id="up" style="font-size:30px;text-decoration:none; color:red">  &#8593;<br>Forward</a><br><br></center>
+				<center><a href="#" id="left" style="font-size:30px;text-decoration:none; color:red"> &#8592;Left</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#" id="right" style="font-size:30px; text-decoration:none; color:red"> Right &#8594;</a><br><br></center>
+				<center><a href="#" id="down" style="font-size:30px;text-decoration:none; color:red"> Backward<br> &#8595;</a></center>
+				</div>
+			</article>
+			</div>
+			
+			<footer><center>Matt Tucker</center></footer>			 
+		</div>
+		
+	
+	</body>
+	
+</html>
