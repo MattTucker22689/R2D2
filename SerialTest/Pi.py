@@ -18,9 +18,4 @@ def startup():
             print line
             if 'Connection Good. Coming online' in line:
                 ser.write(chk.encode())
-                with open('test.html', 'r') as file:
-                    filedata = file.read()
-                filedata = filedata.replace('red', 'green')
-                with open('test.html', 'w') as file:
-                    file.write(filedata)
                 print "Connection has been made"
