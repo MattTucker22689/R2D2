@@ -87,6 +87,9 @@
 		<div class="container">
 			<header>
 				<h1 style="text-align: center">R2D2's Control Center</h1>
+				<h3 style="text-align: center">Serial Connection Status:<span style="color:red; font-size:500%;"> <b>&#x25C9;</b></span></h3>
+					<p style="font-size:60%;">A <span style="color:red;"> <b>RED</b> </span> light indicates that the Pi is waiting for a connection confirmation from the Arduino.</p>
+					<p style="font-size:60%;">A <span style="color:green;"> <b>GREEN</b> </span> light indicates that the connection has been confirmed.</p>
 			</header>
 			
 			<nav>
@@ -96,9 +99,9 @@
 					<p id="ctrlChoice">R2 is currently running via Manual Control</p>
 			</nav>
 			<article style="border-top: 1px solid orange;">
-				<div style="float:left" name="LIVE_FEED">
+				<div style="float:left">
 				<center><h2 style="color:chartreuse;text-shadow:1px 2px black;">Live Feed</h2>
-				<img src="http://192.168.254.13:8081" style="height:400px; width:600px"></center>
+				<img src="http://192.168.254.12:8081" style="height:600px; width:400px; transform:rotate(270deg);"</center>
 				</div>
 				
 				<div style="height:400px; width:275px; float:right;">
