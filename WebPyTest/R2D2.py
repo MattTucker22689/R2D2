@@ -17,7 +17,12 @@ rite = "Right"
 # backleft = "RevLeft"
 # backright = "RevRight"
 stp = "Stop"
+ctrl = "Auto"
 i = 1
+
+#***********************FUTURE CODE***********************
+# Note:
+#		This block will eventually be used to replace the Auto function
 
 #
 # Add image rec function
@@ -30,9 +35,8 @@ i = 1
 #
 # Add AI command function
 #
+#***************************END***************************
 
-
-# Needs to be fixed. Should return true or false value that the HTML uses to change values
 def startup():
     if ser.inWaiting > 0:
         line = ser.readline()
@@ -46,7 +50,7 @@ def startup():
                 with open('templates/index.html', 'r') as file:
                     filedata = file.read()
                 filedata = filedata.replace('<span style="color:red', '<span style="color:green')
-                with open('test.html', 'w') as file:
+                with open('index.html', 'w') as file:
                     file.write(filedata)
                 print "Connection has been made"
 
@@ -54,6 +58,19 @@ def startup():
 @app.route("/")
 def index():
     return render_template('index.html')
+    
+#***********************FUTURE CODE***********************
+# Note:
+#		This block will eventually be used to add manual LED and speaker functions
+
+#
+# Add LED
+#
+
+#
+# Add Speaker
+#
+#***************************END***************************
 
 
 @app.route("/forward")
@@ -82,12 +99,10 @@ def right():
 	ser.write(rite.encode())
 	print("moving right")
 	return 'true'
-	time.sleep(1)
 
 
 @app.route("/stop")
 def stop():
-	time.sleep(5)
 	ser.write(stp.encode())
 	print("stoping")
 	return 'true'
@@ -96,12 +111,14 @@ def stop():
 #  Add command in HTML_use: onclick { while(text=manual)...else make control bad visible }
 @app.route("/auto")
 def auto():
-	print("Auto")
+	ser.write(ctrl.encode())
+	print("Changing Control Type: Auto/Manual")
 	return 'true'
 
 if __name__ == "__main__":
 	print "Start"
+	# startup()
 	app.run(host='0.0.0.0',port=5010)
 
 
-# Create close function to change status back to red
+# Create close function to change status back to red when connections fail
