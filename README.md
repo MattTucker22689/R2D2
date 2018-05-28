@@ -10,7 +10,7 @@ Everything in the, "WebPyTest" branch, is the final code.
 
 For instrunctions on how to use said code and build said bot, 
 please see:
-            INSTRUCTABLE LINK!!!!!!!!!!!!!!!!!!!!!!!
+            https://www.instructables.com/id/A-Lesson-in-Using-a-Raspberry-Pi-to-Remote-Operate/
             
 Please keep in mind, this is an active project; and as such, the code 
 is likely to be buggy at times.
