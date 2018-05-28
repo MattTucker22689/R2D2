@@ -11,6 +11,8 @@
           Current iteration includes a Raspberry Pi running a Python script that communicates
           with the Mega 2560. The Python script will act as a mediator between a web control
           interface and the Mega 2560.
+
+          Full version of bot will reintroduce the Speaker and MicroSD functions.
 */
 
 //***UltraSonic***
@@ -96,9 +98,10 @@ void ComsCheck()
 //***Motors***
 void Forward()
 {
+  Serial.println("Arduino is moving");
   motor1.setSpeed(255);
   motor2.setSpeed(255);
-  motor1.run(FORWARD);
+  motor1.run(BACKWARD);
   motor2.run(FORWARD);
   delay(1000);
 }
@@ -107,7 +110,7 @@ void VearLeft()
 {
   motor1.setSpeed(200);
   motor2.setSpeed(100);
-  motor1.run(FORWARD);
+  motor1.run(BACKWARD);
   motor2.run(FORWARD);
   delay(1000);
 }
@@ -116,14 +119,15 @@ void VearRight()
 {
   motor1.setSpeed(100);
   motor2.setSpeed(200);
-  motor1.run(FORWARD);
+  motor1.run(BACKWARD);
   motor2.run(FORWARD);
   delay(1000);
 }
 
 void TurnLeft()
 {
-  motor1.run(FORWARD);
+  Serial.println("Arduino is moving");
+  motor1.run(BACKWARD);
   motor2.run(BACKWARD);
   delay(1000);
 }
@@ -134,7 +138,7 @@ void TurnLeft(long inches)
   motor2.setSpeed(200);
   while (inches <= 12)
   {
-    motor1.run(FORWARD);
+    motor1.run(BACKWARD);
     motor2.run(BACKWARD);
     delay(500);
     inches = Sensor_loop();
@@ -143,7 +147,8 @@ void TurnLeft(long inches)
 
 void TurnRight()
 {
-  motor1.run(BACKWARD);
+  Serial.println("Arduino is moving");
+  motor1.run(FORWARD);
   motor2.run(FORWARD);
   delay(1000);
 }
@@ -154,7 +159,7 @@ void TurnRight(long inches)
   motor2.setSpeed(200);
   while (inches <= 12)
   {
-    motor1.run(BACKWARD);
+    motor1.run(FORWARD);
     motor2.run(FORWARD);
     delay(500);
     inches = Sensor_loop();
@@ -166,7 +171,7 @@ void Backward(long inches)
   motor2.setSpeed(200);
   while (inches <= 6)
   {
-    motor1.run(BACKWARD);
+    motor1.run(FORWARD);
     motor2.run(BACKWARD);
     delay(500);
     inches = Sensor_loop();
@@ -175,9 +180,10 @@ void Backward(long inches)
 
 void Backward()
 {
+  Serial.println("Arduino is moving");
   motor1.setSpeed(200);
   motor2.setSpeed(200);
-  motor1.run(BACKWARD);
+  motor1.run(FORWARD);
   motor2.run(BACKWARD);
   delay(1000);
 }
@@ -186,7 +192,7 @@ void RevLeft()
 {
   motor1.setSpeed(100);
   motor2.setSpeed(200);
-  motor1.run(BACKWARD);
+  motor1.run(FORWARD);
   motor2.run(BACKWARD);
   delay(1000);
 }
@@ -195,7 +201,7 @@ void RevRight()
 {
   motor1.setSpeed(200);
   motor2.setSpeed(100);
-  motor1.run(BACKWARD);
+  motor1.run(FORWARD);
   motor2.run(BACKWARD);
   delay(1000);
 }
@@ -308,32 +314,33 @@ void Blink3(int num)
 
 void loop()
 {
+  //ComsCheck();
   check = 1;
-  if(check = 1)
+  String command = "";
+  if(check == 1)
     {
-      String command = "";
       command = Serial.readString();
-      if(command == "Forward")
+      while(command == "Forward")
       {
         Forward();
         command = Serial.readString();
       }
-      else if(command == "Backward")
+      while(command == "Backward")
       {
         Backward();
         command = Serial.readString();
       }
-      else if(command == "Left")
+      while(command == "Left")
       {
         TurnLeft();
         command = Serial.readString();
       }
-      else if(command == "Right")
+      while(command == "Right")
       {
         TurnRight();
         command = Serial.readString();
       }
-      else
+      while(command == "Stop")
       {
         Stop();
         command = Serial.readString();
